@@ -7,7 +7,7 @@ Curated instruction files for GitHub Copilot that enforce good practices, perfor
 Paste this into Copilot Chat (agent mode) from inside your Sitefinity project:
 
 ```
-Fetch and execute the appropriate instructions to set me up for Sitefinity development from https://raw.githubusercontent.com/bonny-bonev/sitefinity-ai-dev-guide/main/prompt.md
+Fetch and execute the appropriate instructions to set me up for Sitefinity development from https://raw.githubusercontent.com/Sitefinity/sitefinity-ai-dev-guide/main/prompt.md
 ```
 
 The agent downloads the instruction files into your project's `.github/instructions/` folder. Re-run the same prompt any time to update to the latest versions.
@@ -24,7 +24,7 @@ Copy the `.github/instructions/` folder into your project's root. The `sitefinit
 ### Option 2: Clone and pick what you need
 
 ```bash
-git clone https://github.com/bonny-bonev/sitefinity-ai-dev-guide.git
+git clone https://github.com/Sitefinity/sitefinity-ai-dev-guide.git
 ```
 
 Copy individual files from `.github/instructions/` into your project's `.github/instructions/` folder.
@@ -32,7 +32,7 @@ Copy individual files from `.github/instructions/` into your project's `.github/
 ### Option 3: Git submodule
 
 ```bash
-git submodule add https://github.com/bonny-bonev/sitefinity-ai-dev-guide.git .sitefinity-guide
+git submodule add https://github.com/Sitefinity/sitefinity-ai-dev-guide.git .sitefinity-guide
 ```
 
 Then copy the instruction files into your `.github/instructions/` directory.

@@ -31,12 +31,12 @@ Do not assume a fixed list of files. List the published directory and install ev
 List this endpoint:
 
 ```
-https://api.github.com/repos/bonny-bonev/sitefinity-ai-dev-guide/contents/.github/instructions?ref=main
+https://api.github.com/repos/Sitefinity/sitefinity-ai-dev-guide/contents/.github/instructions?ref=main
 ```
 
 It returns a JSON array. Take every entry whose `name` ends in `.instructions.md` and note its `download_url`.
 
-If that endpoint is unreachable, fall back to browsing `https://github.com/bonny-bonev/sitefinity-ai-dev-guide/tree/main/.github/instructions` and reading the file names from the page.
+If that endpoint is unreachable, fall back to browsing `https://github.com/Sitefinity/sitefinity-ai-dev-guide/tree/main/.github/instructions` and reading the file names from the page.
 
 ## Step 4 — Download them
 
@@ -47,7 +47,7 @@ Use your built-in fetch or web tool if you have one. If you do not, run the equi
 PowerShell:
 
 ```powershell
-$api = "https://api.github.com/repos/bonny-bonev/sitefinity-ai-dev-guide/contents/.github/instructions?ref=main"
+$api = "https://api.github.com/repos/Sitefinity/sitefinity-ai-dev-guide/contents/.github/instructions?ref=main"
 New-Item -ItemType Directory -Force -Path ".github/instructions" | Out-Null
 
 # Assign to a variable first — piping Invoke-RestMethod directly does not enumerate the array
@@ -63,7 +63,7 @@ foreach ($entry in $entries) {
 Bash:
 
 ```bash
-api="https://api.github.com/repos/bonny-bonev/sitefinity-ai-dev-guide/contents/.github/instructions?ref=main"
+api="https://api.github.com/repos/Sitefinity/sitefinity-ai-dev-guide/contents/.github/instructions?ref=main"
 mkdir -p .github/instructions
 curl -fsSL "$api" \
   | grep -o '"download_url": *"[^"]*\.instructions\.md"' \
@@ -107,4 +107,4 @@ Re-run this same prompt at any time. It re-reads the published directory, so it 
 
 ## Source
 
-These instructions are published at `https://raw.githubusercontent.com/bonny-bonev/sitefinity-ai-dev-guide/main/prompt.md` so their authenticity can be re-verified at any time. The instruction files themselves live at `https://github.com/bonny-bonev/sitefinity-ai-dev-guide`.
+These instructions are published at `https://raw.githubusercontent.com/Sitefinity/sitefinity-ai-dev-guide/main/prompt.md` so their authenticity can be re-verified at any time. The instruction files themselves live at `https://github.com/Sitefinity/sitefinity-ai-dev-guide`.
