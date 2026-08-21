@@ -107,4 +107,4 @@ Re-run this same prompt at any time. It re-reads the published directory, so it 
 
 ## Source
 
-These instructions are published at `https://raw.githubusercontent.com/Sitefinity/sitefinity-ai-dev-guide/main/prompt.md` so their authenticity can be re-verified at any time. The instruction files themselves live at `https://github.com/Sitefinity/sitefinity-ai-dev-guide`.
+These instructions are published at `https://raw.githubusercontent.com/Sitefinity/sitefinity-ai-dev-guide/main/agent-setup.md` so their authenticity can be re-verified at any time. The instruction files themselves live at `https://github.com/Sitefinity/sitefinity-ai-dev-guide`.
