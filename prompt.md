@@ -49,12 +49,15 @@ PowerShell:
 ```powershell
 $api = "https://api.github.com/repos/bonny-bonev/sitefinity-ai-dev-guide/contents/.github/instructions?ref=main"
 New-Item -ItemType Directory -Force -Path ".github/instructions" | Out-Null
-Invoke-RestMethod -Uri $api -Headers @{ "User-Agent" = "sitefinity-ai-dev-guide-setup" } |
-  Where-Object { $_.name -like "*.instructions.md" } |
-  ForEach-Object {
-    Invoke-WebRequest -Uri $_.download_url -OutFile ".github/instructions/$($_.name)" -UseBasicParsing
-    Write-Host "installed $($_.name)"
-  }
+
+# Assign to a variable first — piping Invoke-RestMethod directly does not enumerate the array
+$entries = Invoke-RestMethod -Uri $api -Headers @{ "User-Agent" = "sitefinity-ai-dev-guide-setup" }
+
+foreach ($entry in $entries) {
+  if ($entry.name -notlike "*.instructions.md") { continue }
+  Invoke-WebRequest -Uri $entry.download_url -OutFile ".github/instructions/$($entry.name)" -UseBasicParsing
+  Write-Host "installed $($entry.name)"
+}
 ```
 
 Bash:
